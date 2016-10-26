@@ -26,7 +26,7 @@
                                 <rect key="frame" x="111" y="587" width="153" height="30"/>
                                 <state key="normal" title="Present Blurred Modal"/>
                                 <connections>
-                                    <segue destination="oTb-w1-zGu" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="o0i-9e-EoI"/>
+                                    <segue destination="oTb-w1-zGu" kind="presentation" animates="NO" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="o0i-9e-EoI"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="qrP-Sk-S7a">
@@ -92,6 +92,9 @@
                             <constraint firstItem="lga-EP-BSk" firstAttribute="centerX" secondItem="wcJ-4x-MMt" secondAttribute="centerX" id="QMi-EE-M3h"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="visualEffectView" destination="lga-EP-BSk" id="1tF-Q7-kKg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X7z-w0-8aF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
