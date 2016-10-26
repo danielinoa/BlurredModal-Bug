@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8C-Ux-fMK">
+                                <rect key="frame" x="111" y="587" width="153" height="30"/>
+                                <state key="normal" title="Present Blurred Modal"/>
+                                <connections>
+                                    <segue destination="oTb-w1-zGu" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="o0i-9e-EoI"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="qrP-Sk-S7a">
+                                <rect key="frame" x="0.0" y="146" width="375" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qrP-Sk-S7a" secondAttribute="height" multiplier="1:1" id="1k2-7U-Gdd"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qrP-Sk-S7a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KwG-Eq-U3P"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="W8C-Ux-fMK" secondAttribute="bottom" constant="50" id="NyQ-Z3-CEx"/>
+                            <constraint firstItem="qrP-Sk-S7a" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UFa-sp-BVt"/>
+                            <constraint firstItem="qrP-Sk-S7a" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="ZUH-rA-7kt"/>
+                            <constraint firstItem="W8C-Ux-fMK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="no3-vz-eLs"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
+        </scene>
+        <!--Blurred Modal View Controller-->
+        <scene sceneID="Nli-FE-oI3">
+            <objects>
+                <viewController id="oTb-w1-zGu" customClass="BlurredModalViewController" customModule="BlurredModal" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vhn-e4-Yfo"/>
+                        <viewControllerLayoutGuide type="bottom" id="GRP-lT-EzH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wcJ-4x-MMt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lga-EP-BSk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="arh-TP-4eu">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rf5-CM-feX">
+                                            <rect key="frame" x="160.5" y="587" width="54" height="30"/>
+                                            <state key="normal" title="Dismiss"/>
+                                            <connections>
+                                                <action selector="dismiss:" destination="oTb-w1-zGu" eventType="touchUpInside" id="gNZ-xk-syz"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="rf5-CM-feX" firstAttribute="centerX" secondItem="arh-TP-4eu" secondAttribute="centerX" id="Nu4-xf-Pf7"/>
+                                        <constraint firstAttribute="bottom" secondItem="rf5-CM-feX" secondAttribute="bottom" constant="50" id="otV-KC-kiW"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lga-EP-BSk" firstAttribute="centerY" secondItem="wcJ-4x-MMt" secondAttribute="centerY" id="8qJ-f2-w2I"/>
+                            <constraint firstItem="lga-EP-BSk" firstAttribute="width" secondItem="wcJ-4x-MMt" secondAttribute="width" id="BOZ-qg-e5U"/>
+                            <constraint firstItem="lga-EP-BSk" firstAttribute="height" secondItem="wcJ-4x-MMt" secondAttribute="height" id="Lzw-Ag-qf0"/>
+                            <constraint firstItem="lga-EP-BSk" firstAttribute="centerX" secondItem="wcJ-4x-MMt" secondAttribute="centerX" id="QMi-EE-M3h"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X7z-w0-8aF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="890" y="137"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="image" width="2592" height="1728"/>
+    </resources>
+</document>
